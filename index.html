@@ -189,7 +189,13 @@ function initialsOf(name){
 function renderPersonCard(c){
   document.getElementById('staff-name').textContent = c.full_name;
   document.getElementById('staff-title').textContent = c.title;
-  document.getElementById('avatar-initials').textContent = initialsOf(c.full_name);
+
+  const avatar = document.getElementById('avatar-initials');
+  if(c.photo_url){
+    avatar.innerHTML = `<img src="${c.photo_url}" alt="${c.full_name}">`;
+  }else{
+    avatar.textContent = initialsOf(c.full_name);
+  }
 
   const row = document.getElementById('contact-row');
   row.innerHTML = '';
@@ -287,7 +293,7 @@ async function loadBareState(){
 async function loadCodeState(){
   try{
     const res = await fetch(
-      `${SB_URL}/rest/v1/business_cards?code=eq.${encodeURIComponent(code)}&select=full_name,title,phone,email`,
+      `${SB_URL}/rest/v1/business_cards?code=eq.${encodeURIComponent(code)}&select=full_name,title,phone,email,photo_url`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
     if(!res.ok) throw new Error('fetch failed');
