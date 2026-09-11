@@ -64,8 +64,8 @@
 
   .blurb{font-size:12.5px; line-height:1.6; color:rgba(255,255,255,.65); text-align:center; margin:0 0 16px;}
 
-  .quicklinks{display:flex; gap:10px;}
-  .quicklink{flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px 8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-sm); color:#fff; text-decoration:none; font-size:12px; font-weight:700; text-align:center; font-family:'Inter',sans-serif; cursor:pointer;}
+  .quicklinks{display:flex; flex-wrap:wrap; gap:10px;}
+  .quicklink{flex:1 1 calc(50% - 5px); display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px 8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-sm); color:#fff; text-decoration:none; font-size:12px; font-weight:700; text-align:center; font-family:'Inter',sans-serif; cursor:pointer;}
   .quicklink svg{width:19px; height:19px;}
 
   .social-row{display:flex; gap:10px; justify-content:center; margin-top:14px;}
@@ -122,7 +122,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
           <span class="quicklink-label">Website</span>
         </a>
-        <a class="quicklink" href="#" id="catalogue-link">
+        <a class="quicklink" href="#" id="catalogue-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           <span class="quicklink-label">Catalogue</span>
         </a>
@@ -130,6 +130,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5 15.4 6.5M8.6 13.5l6.8 4"/></svg>
           <span class="quicklink-label">Share</span>
         </button>
+        <a class="quicklink" href="contact.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          <span class="quicklink-label">Get in Touch</span>
+        </a>
       </div>
 
       <div class="social-row">
